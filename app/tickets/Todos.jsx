@@ -12,7 +12,7 @@ async function getUsers() {
 }
 
 export default async function Todos() {
-  // const users = await getUsers();
+  const users = await getUsers();
 
   return (
     <div className="grid grid-cols-5 gap-6">

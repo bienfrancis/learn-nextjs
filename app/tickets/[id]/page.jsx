@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 async function getUser(id) {
   //   const res = await fetch("https://jsonplaceholder.typicode.com/users/" + id, {
   const res = await fetch("API URL" + id, {
@@ -6,11 +8,15 @@ async function getUser(id) {
     },
   });
 
+  if (!res.ok) {
+    notFound();
+  }
+
   return res.json();
 }
 
 export default async function UserDetails({ params }) {
-  //   const user = await getUser(params.id);
+  const user = await getUser(params.id);
   return (
     // <div>
     //   <h4>{user.name}</h4>
