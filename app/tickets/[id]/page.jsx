@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 
 async function getUser(id) {
-  //   const res = await fetch("https://jsonplaceholder.typicode.com/users/" + id, {
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+  // const res = await fetch("https://jsonplaceholder.typicode.com/users/" + id, {
   const res = await fetch("API URL" + id, {
     next: {
       revalidate: 30,
