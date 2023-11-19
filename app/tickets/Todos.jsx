@@ -1,6 +1,9 @@
 import Link from "next/link";
+import { resolve } from "styled-jsx/css";
 
 async function getUsers() {
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+
   // const response = await fetch("https://jsonplaceholder.typicode.com/users", {
   const response = await fetch("API URL", {
     next: {
